@@ -15,9 +15,6 @@ const base_url = process.env.BASE_URL
 // A RESTFul GET API/*
 app.get("/soundcloud", async (req, res) => {
 
-
-    console.log(process.env.MY_ENV_VAR);
-
     const inputUrl = req.header("url")
     const validation = await parametersValidation(inputUrl)
 
@@ -64,7 +61,7 @@ async function soundcloudRequest(input){
     const url = await fetchUrl(media_url+''+clinetId)
 
     return {
-        "thambnail" : artwork_url,
+        "thumbnail" : artwork_url,
         "title" : title,
         "url" : url
     }
